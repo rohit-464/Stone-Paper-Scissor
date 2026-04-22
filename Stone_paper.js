@@ -7,6 +7,7 @@ const msgText = document.querySelector("#msg");
 const userSocrePara = document.querySelector("#user-score");
 const compSocrePara = document.querySelector("#comp-score");
 
+const resetBtn = document.querySelector("#reset-btn");
 
 const genCompChoice = () => {
     const options = ["rock", "paper", "scissors"];
@@ -19,6 +20,15 @@ const drawGame = () => {
     // console.log("Game Was Draw.");
     msgText.innerText = "Game Was Draw. Play Again.";
     msgText.style.backgroundColor = "blue";
+};
+
+const resetGame = () =>{
+    userScore = 0;
+    compScore = 0;
+    userSocrePara.innerText = userScore;
+    compSocrePara.innerText = compScore;
+    msgText.innerText = "Score Reset. Play Again!";
+    msgText.style.backgroundColor = "purple";
 };
 
 const showWinner = (userWin) => {
@@ -63,9 +73,12 @@ const playGame = (userChoice) => {
 
 choices.forEach((choice) => {
     // console.log(choice);
+    
     choice.addEventListener("click",() => {
         const userChoice = choice.getAttribute("id");
         // console.log("choices are clicked", userChoice);
         playGame(userChoice);
-    })
-})
+    });
+});
+resetBtn.addEventListener("click", resetGame);
+

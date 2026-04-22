@@ -74,3 +74,15 @@ img{
     padding: 1rem;
     border-radius: 1rem;
 }
+
+#reset-btn {
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: orange;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+    transform: scale(0.9);
+
+}
